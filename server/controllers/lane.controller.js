@@ -35,13 +35,12 @@ export function getLanes(req, res) {
 }
 
 export function deleteLane(req, res) {
-	Note.remove({ id: req.params.laneId}, (err) => {
-		if (err) {
-			res.status(500).send(err);
-		}
-	});
-
 	Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
+		lane.notes.forEach((note) => {
+			Note.findOne({ id: note.id}).exec((_, note) => {
+				note.remove();
+			});
+		})
 		if (err) {
 			res.status(500).send(err);
 		}
