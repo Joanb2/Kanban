@@ -49,3 +49,12 @@ export function deleteLane(req, res) {
 		});
 	});
 }
+
+export function updateName(req, res) {
+	Lane.update({ id: req.params.laneId }, { name: req.body.name}).exec((err, name) => {
+		if (err) {
+			res.status(err).send(err);
+		}
+		res.json({ name });
+	});
+}
