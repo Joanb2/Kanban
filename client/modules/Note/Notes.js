@@ -1,4 +1,5 @@
-import React, { Proptypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Note from './Note';
 //import styles from './Notes.css';
 import Edit from '../../components/Edit';
@@ -30,12 +31,12 @@ const Notes = ({ notes, laneId, editNote, updateNote, moveWithinLane }) => {
 };
 
 Notes.proptypes = {
-	deleteNote: Proptypes.func,
-	updateNote: Proptypes.func,
+	deleteNote: PropTypes.func,
+	updateNote: PropTypes.func,
 	moveWithinLane: PropTypes.func,
-	laneId: Proptypes.string,
-	editNote: Proptypes.func,
-	notes: Proptypes.array,
+	laneId: PropTypes.string,
+	editNote: PropTypes.func,
+	notes: PropTypes.array,
 };
 
 export default Notes;

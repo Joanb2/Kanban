@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { createLaneRequest, deleteLaneRequest, updateLaneRequest, fetchLanes, moveBetweenLanes } from './LaneActions' 
+import { createLaneRequest, deleteLaneRequest, updateLaneRequest, fetchLanes, moveBetweenLanes, editLane } from './LaneActions' 
 import Lane from './Lane';
 import { createNoteRequest } from '../Note/NoteActions';
 import { compose } from 'redux';
 import { DropTarget } from 'react-dnd';
-import ItemTypes from '../Kanban/itemtypes';
+import ItemTypes from '../Kanban/itemTypes';
 
 
 
