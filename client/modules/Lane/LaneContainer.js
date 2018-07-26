@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import * as laneActions from './LaneActions';
 import { createLaneRequest, deleteLaneRequest, updateLaneRequest, fetchLanes, moveBetweenLanes, editLane } from './LaneActions' 
 import Lane from './Lane';
 import { createNoteRequest } from '../Note/NoteActions';
@@ -28,6 +29,7 @@ const noteTarget = {
 };
 
 const mapDispatchToProps = {
+	...laneActions,
 	editLane,
 	moveBetweenLanes,
 	deleteLane: deleteLaneRequest,
