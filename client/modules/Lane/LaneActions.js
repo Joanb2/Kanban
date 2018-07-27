@@ -42,14 +42,14 @@ export function createLane(lane) {
 		type: CREATE_LANE,
 		lane: {
 			notes: [],
-			...lane,
+			...lane
 		}
 	};
 }
 
 export function createLaneRequest(lane) {
 	return (dispatch) => {
-		return callApi('lanes', 'post', 'lane').then(res => {
+		return callApi('lanes', 'post', lane).then(res => {
 			dispatch(createLane(res));
 		});
 	};

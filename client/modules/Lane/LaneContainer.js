@@ -34,7 +34,7 @@ const mapDispatchToProps = {
 	moveBetweenLanes,
 	deleteLane: deleteLaneRequest,
 	updateLane: updateLaneRequest,
-	addNote: createNoteRequest,
+	createNote: createNoteRequest,
 };
 
 export default compose(

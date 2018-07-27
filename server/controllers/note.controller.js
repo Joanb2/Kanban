@@ -2,6 +2,11 @@ import Note from '../models/note';
 import Lane from '../models/lane';
 import uuid from 'uuid';
 
+//wyrzucić conbsologi
+//co to saved i co w środku nie '', tylko {}
+//
+
+
 export function getSomething(req, res) {
   return res.status(200).end();
 }

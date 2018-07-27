@@ -10,6 +10,7 @@ export default function notes(state = initialState, action) {
 	switch (action.type) {
 		case CREATE_NOTE:
 		case UPDATE_NOTE:
+			console.log('note', state, action);
 			return { ...state, [action.note.id] : action.note };
 		case DELETE_NOTE:
 			return omit(state, action.noteId);
