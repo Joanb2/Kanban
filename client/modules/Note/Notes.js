@@ -4,8 +4,8 @@ import Note from './Note';
 //import styles from './Notes.css';
 import Edit from '../../components/Edit';
 
+
 const Notes = ({ notes, laneId, editNote, updateNote, moveWithinLane, deleteNote }) => {
-	console.log('notes', notes);
 	return (
 		<ul className="notes">{notes.map((note) => 
 			<Note 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as laneActions from './LaneActions';
-import { createLaneRequest, deleteLaneRequest, updateLaneRequest, fetchLanes, moveBetweenLanes, editLane } from './LaneActions' 
+import { deleteLaneRequest, updateLaneRequest, moveBetweenLanes, editLane } from './LaneActions' 
 import Lane from './Lane';
 import { createNoteRequest } from '../Note/NoteActions';
 import { compose } from 'redux';
@@ -21,7 +21,7 @@ const noteTarget = {
 		if (!targetProps.lane.notes.length) {
 			targetProps.moveBetweenLanes(
 				targetProps.lane.id,
-				noteId,
+				note.id,
 				sourceLaneId,
 			);
 		}
@@ -29,17 +29,16 @@ const noteTarget = {
 };
 
 const mapDispatchToProps = {
-	...laneActions,
 	editLane,
 	moveBetweenLanes,
 	deleteLane: deleteLaneRequest,
 	updateLane: updateLaneRequest,
-	createNote: createNoteRequest,
+	addNote: createNoteRequest,
 };
 
 export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	DropTarget(ItemTypes.NOTE, noteTarget, (dragConnect) => ({
 		connectDropTarget: dragConnect.dropTarget()
-	}))
-)(Lane)
+  }))
+)(Lane);

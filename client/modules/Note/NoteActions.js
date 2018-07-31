@@ -6,11 +6,13 @@ export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const CREATE_NOTES = 'CREATE_NOTES';
 export const EDIT_NOTE = 'EDIT_NOTE';
-export const MOVE_WITHIN_LANE = 'MOVE_WITHIN_LANE';
+export const MOVE_WITHIN_LANE = 'MOVE_NOTES';
 
 // Export Actions
 
+
 export function createNotes(notesData) {
+	console.log('noteid', noteId);
 	return {
 		type: CREATE_NOTES,
 		notes: notesData,
@@ -42,8 +44,8 @@ export function updateNote(note) {
 
 export function updateNoteRequest(note) {
 	return (dispatch) => {
-		return callApi('notes', 'put', { id: note.id, task: note.task}).then(noteResp => {
-			dispatch(updateNote(noteResp));
+		return callApi(`notes/${note.id}`, 'put', note).then(noteResp => {
+			dispatch(updateNote(note));
 		});
 	}
 }

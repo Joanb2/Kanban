@@ -20,7 +20,6 @@ export default function lanes(state = initialState, action) {
 	switch (action.type) {
 		case CREATE_LANE:
 		case UPDATE_LANE:
-			console.log('reducer', state, action);
 			return { ...state, [action.lane.id] : action.lane};
 		case EDIT_LANE: {
 			const lane = { ...state[action.id], editing: true };

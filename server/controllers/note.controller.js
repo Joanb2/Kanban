@@ -6,7 +6,6 @@ import uuid from 'uuid';
 //co to saved i co w środku nie '', tylko {}
 //
 
-
 export function getSomething(req, res) {
   return res.status(200).end();
 }

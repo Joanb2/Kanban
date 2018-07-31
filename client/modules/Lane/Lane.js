@@ -7,13 +7,13 @@ import Edit from '../../components/Edit';
 //import styles from './Lane.css';
 
 const Lane = (props) => {
-	const { connectDropTarget, lane, laneNotes, editLane, createNote, updateLane, deleteLane } = props;
+	const { connectDropTarget, lane, laneNotes, editLane, addNote, updateLane, deleteLane } = props;
 	const laneId = lane.id;
 	return connectDropTarget(
 		<div >
 			<div >
 				<div >
-					<button onClick={() => createNote({task: 'New Note'}, laneId)}>Add Note</button>
+					<button onClick={() => addNote({task: 'New Note'}, laneId)}>Add Note</button>
 				</div>
 				<Edit 
 					
@@ -27,12 +27,13 @@ const Lane = (props) => {
 				</div>
 			</div>
 			<NoteContainer
-				notes={lane.notes}
+				notes={laneNotes}
 				laneId={laneId}
 			/>
 		</div>
 	);
 };
+
 
 Lane.propTypes = {
 	lane: PropTypes.object,
